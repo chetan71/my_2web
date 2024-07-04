@@ -1,8 +1,8 @@
- /* Import the Inter font */
+/* Import the Inter font */
         
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: Arial, Helvetica, sans-serif;
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -16,6 +16,62 @@
             padding: 10px 20px;
             border: 3px solid lightgoldenrodyellow;
             border-radius: 100px;
+            position: relative;
+            z-index: 1000; 
+        }
+        
+        .menu-toggle {
+            display: none;
+        }
+        
+        .menu-icon {
+            display: none;
+            font-size: 30px;
+            cursor: pointer;
+        }
+        
+        .nav-links {
+            list-style: none;
+            display: flex;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .nav-links li {
+            margin-right: 20px;
+        }
+        
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        @media (max-width: 768px) {
+            .menu-icon {
+                display: block;
+                
+            }
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background-color: #202020;
+                position: absolute;
+                top: 50px;
+                left: 0;
+                padding-top: 10px;
+            }
+            .nav-links li {
+                margin: 0;
+                border-top: 1px solid #444;
+            }
+            .nav-links li a {
+                padding: 10px 20px;
+                display: block;
+            }
+            .menu-toggle:checked+.menu-icon+.nav-links {
+                display: flex;
+            }
         }
         
         nav ul {
@@ -23,6 +79,7 @@
             list-style: none;
             padding: 0;
             margin: 0;
+             overflow: none;
         }
         
         nav li {
@@ -35,9 +92,13 @@
         nav a {
             color: #fff;
             text-decoration: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         
         .contact {
+             overflow: none;
             position: absolute;
             right: 4px;
             padding: 6px 15px;
@@ -47,6 +108,7 @@
         }
         
         .container {
+             overflow: none;
             display: grid;
             grid-template-columns: 1fr 1fr;
             grid-gap: 20px;
@@ -54,14 +116,19 @@
         }
         
         .card {
+            overflow: none;
+            height: fit-content;
             background-color: #f5f5f5;
-            border-radius: 10px;
+            border-radius: 30px;
             padding: 20px;
             position: relative;
         }
         
         .card.large {
+             overflow: none;
             grid-column: span 2;
+            height: fit-content; 
+            width: fit-content;
         }
         
         .card-header {
@@ -81,10 +148,13 @@
         
         img {
             width: 100%;
-            border-radius: 10px;
+            /* padding: 20px 0px; */
+            border-radius: 30px;
         }
         
         .cta-button {
+            display: inline;
+            width: 100%;
             padding: 10px 20px;
             color: #080505;
             border: none;
@@ -92,12 +162,23 @@
             cursor: pointer;
             position: relative;
             bottom: 0px;
-            transition: transform 0.3s ease, background-color 0.3s ease;
+            transition: transform 0.7s ease, background-color 0.7s ease;
         }
         
-        .cta-button:hover {
-            transform: scale(1.05);
-            background-color: #0056b3;
+        .cta-button p {
+            display: inline;
+        }
+        
+        .button {
+            display: inline;
+            float: right;
+            width: 10%;
+            color: #080505;
+            border: none;
+            cursor: pointer;
+            position: relative;
+            bottom: 0px;
+            transition: transform 0.3s ease, background-color 0.3s ease;
         }
         /* Responsive Design */
         
